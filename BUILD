@@ -10,6 +10,9 @@ config_setting(
 cc_library(
   name = 'gflags',
   visibility = ['//visibility:public'],
+  deps = [
+    '//external:pthread',
+  ],
   srcs = [
     'src/gflags.cc',
     'src/gflags_completions.cc',
@@ -23,7 +26,4 @@ cc_library(
     ':darwin': ['-iquotegflags/__build__/darwin/include/gflags'],
     '//conditions:default': ['-iquotegflags/__build__/linux/include/gflags'],
   }),
-  linkopts = [
-    '-pthread',
-  ],
 )
