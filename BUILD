@@ -13,6 +13,10 @@ cc_library(
   deps = [
     '//external:pthread',
   ],
+  hdrs = [
+    'src/mutex.h',
+    'src/util.h',
+  ],
   srcs = [
     'src/gflags.cc',
     'src/gflags_completions.cc',
